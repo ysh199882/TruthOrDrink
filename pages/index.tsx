@@ -46,12 +46,12 @@ const Home: NextPage = () => {
           <div className="grid grid-cols-2 gap-4">
             <Link href='/game?mode=dirty'>
               <div className="select-none cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#FF006D] to-[#FC0023]">
-                更脏点
+                脏话
               </div>
             </Link>
             <Link href='/game?mode=dares'>
               <div className="select-none cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#EA00C3] to-[#BE00FF]">
-                big胆
+                大冒险
               </div>
             </Link>
           </div>
