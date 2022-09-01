@@ -1,10 +1,11 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import ReactGA from 'react-ga';
-const TRACKING_ID = "UA-239783277-1"; // OUR_TRACKING_ID
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-ERE0J2PE94");
+ReactGA.send("pageview");
 
 function MyApp({ Component, pageProps }: AppProps) {
-  ReactGA.initialize(TRACKING_ID);
   return <Component {...pageProps} />
 }
 
