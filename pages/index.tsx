@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import ReactGA from "react-ga";
-const TRACKING_ID = "G-ERE0J2PE94"; // OUR_TRACKING_ID
+const TRACKING_ID = "UA-239783277-1"; // OUR_TRACKING_ID
 
 ReactGA.initialize(TRACKING_ID);
 
