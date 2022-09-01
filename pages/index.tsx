@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 
 const useAnalyticsEventTracker = (category="Blog category") => {
