@@ -2,8 +2,17 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
+import ReactGA from "react-ga";
+
+const useAnalyticsEventTracker = (category="Blog category") => {
+  const eventTracker = (action = "test action", label = "test label") => {
+    ReactGA.event({category, action, label});
+  }
+  return eventTracker;
+}
 
 const Home: NextPage = () => {
+  const gaEventTracker = useAnalyticsEventTracker('index.tsx');
   return (
     <div className="h-full">
       <Head>
@@ -30,12 +39,13 @@ const Home: NextPage = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <Link href='/game?mode=normal'>
-              <div className="select-none cursor-pointer text-white font-bold text-xl rounded-xl p-4 shadow-xl w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#00C5FF] to-[#009BFF]">
+              <div className="select-none cursor-pointer text-white font-bold text-xl rounded-xl p-4 shadow-xl w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#00C5FF] to-[#009BFF]" onClick={()=>gaEventTracker('正常')}>
                 正常
               </div>
             </Link>
             <Link href='/game?mode=party'>
-              <div className="select-none cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#FFC300] to-[#FF8900]">
+              <div className="select-none cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#FFC300] to-[#FF8900]"
+              onClick={()=>gaEventTracker('喝嗨了')}>
                 喝嗨了
               </div>
             </Link>
@@ -45,12 +55,12 @@ const Home: NextPage = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <Link href='/game?mode=dirty'>
-              <div className="select-none cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#FF006D] to-[#FC0023]">
+              <div className="select-none cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#FF006D] to-[#FC0023]" onClick={()=>gaEventTracker('脏话')}>
                 脏话
               </div>
             </Link>
             <Link href='/game?mode=dares'>
-              <div className="select-none cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#EA00C3] to-[#BE00FF]">
+              <div className="select-none cursor-pointer text-white font-bold text-xl border-black rounded-xl p-4 shadow-md w-full flex-1 mx-auto text-center bg-gradient-to-r from-[#EA00C3] to-[#BE00FF]" onClick={()=>gaEventTracker('大冒险')}>
                 大冒险
               </div>
             </Link>
